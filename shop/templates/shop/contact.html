@@ -1,0 +1,33 @@
+{% extends 'shop/layout.html' %}
+{% block title %} Contact Us {% endblock %}
+{% block body %}
+<div class="container my-4">
+
+    <h1>Contact Us</h1>
+    <form method="POST" action="/shop/contact/">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="Enter Your Email" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Your Phone" required>
+        </div>
+        <div class="form-group">
+            <label for="desc">Message</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+        </div>
+        <button class="btn btn-primary btn-lg px-4" type="submit"> Send</button>
+    </form>
+</div>
+{% if param %}
+<script>
+    alert('Your message has been sent')
+</script>
+{% endif %}
+{% endblock %}

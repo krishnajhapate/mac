@@ -1,0 +1,26 @@
+{% extends 'shop/layout.html' %}
+{% block title %} {{product.product_name|truncatechars:20}}{%endblock%}
+{% block body %}
+<style>
+    img
+    {
+        width: 400px;
+        height: auto;
+    }
+</style>
+<div class="container my-4" style="margin-top: 80px!important">
+   <div class="row">
+       <div class="col-4">
+           <img class="img img-fluid img-shadow" src="/media/{{product.image}}" alt="">
+           <button class="btn btn-primary   px-4">Buy Now</button>
+           <button class="btn btn-primary   px-4">Add to Cart</button>
+       </div>
+       <div class="col-8">
+           <h2>{{product.product_name}}</h2>
+           <p class="text-justify">{{product.desc}}</p>
+           <span class="d-block mb-4"><h5><b>Price : {{product.price}}</b></h5></span>
+       </div>
+   </div> 
+</div>
+
+{%endblock%}

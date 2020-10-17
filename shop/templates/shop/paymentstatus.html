@@ -1,0 +1,23 @@
+{% extends 'shop/layout.html' %}
+{% block title %}Check Out{% endblock %}
+
+{% block body %}
+<div class="container my-2 mt-4" style="margin-top: 80px!important">
+    <!-- {{response}} -->
+    <div class="col">
+        <h2 class="my-2">Payment status regarding your order id {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '01' %}
+        ORDER SUCCESS<br>
+        Your Transaction id is {{response.TXNID}}
+        {% else %}
+        Order UNSUCCESSFULL
+        {% endif %}
+        
+    </div>
+
+</div>
+{% block js %}
+<script>
+</script>
+{% endblock js %}
+{% endblock body %}
