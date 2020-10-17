@@ -4,7 +4,7 @@ from shop.models import Product, Contact, Orders, OrderUpdate
 from math import ceil
 import json
 from paytm import Checksum
-MERCHANT_KEY='YjCep_e3heca4SWi'
+MERCHANT_KEY='your merchant id'
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -138,7 +138,7 @@ def checkout(request):
         # return render(request, "shop/checkout.html", {"thank": thank, "id": id})
 
         param_dict = {
-            "MID": "UgHuyf92866898213479",
+            "MID": "your mid",
             "ORDER_ID": str(order.order_id),
             "TXN_AMOUNT": str(amount),
             "CUST_ID": email,
